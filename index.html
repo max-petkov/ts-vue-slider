@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-carousel-3d@1.0.1/dist/carousel-3d.umd.min.js"></script>
+    <title>TimeShuffle Sliders</title>
+</head>
+
+<body>
+    <div class="section--genesis-slider">
+        <div id="sliderGenesis" class="vue-slider vue-slider--genesis">
+            <carousel-3d :space="512+128" :width="600" :height="543+72+16" :loop="true" :controls-visible="true"
+                :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'" :controls-width="30"
+                :controls-height="60" :clickable="false">
+                <slide v-for="(slide, i) in slides" :index="i">
+                    <div class="vue-slider__img-container">
+                        <img :src="slide.img" alt="">
+                    </div>
+                    <p>{{slide.cardDescription}}</p>
+                </slide>
+            </carousel-3d>
+        </div>
+    </div>
+    <div class="section--dna-shuffle">
+        <div id="sliderDnaShuffle" class="vue-slider vue-slider--dna-shuffle">
+            <carousel-3d :space="512+128" :width="800" :height="500+48*2" :loop="true" :controls-visible="true"
+                :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'" :controls-width="30"
+                :controls-height="60" :clickable="false">
+                <slide v-for="(slide, i) in slides" :index="i">
+                    <div class="vue-slider__img-container">
+                        <img :src="slide.img" alt="">
+                    </div>
+                    <p>{{slide.cardDescription}}</p>
+                </slide>
+            </carousel-3d>
+        </div>
+    </div>
+    <div class="section--items">
+        <div id="sliderItems" class="vue-slider vue-slider--items">
+            <carousel-3d :space="512+128" :width="542" :height="592" :loop="true" :controls-visible="true"
+                :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'" :controls-width="30"
+                :controls-height="60" :clickable="false">
+                <slide v-for="(slide, i) in slides" :index="i">
+                    <div class="vue-slider__card-container">
+                        <div class="vue-slider__img-container">
+                            <img :src="slide.img" :class="slide.imgClass" alt="">
+                        </div>
+                        <p>{{slide.cardName}}</p>
+                        <p>{{slide.cardDescription}}</p>
+                    </div>
+                </slide>
+            </carousel-3d>
+        </div>
+    </div>
+    <div class="section--heroes">
+        <div id="sliderHeroes" class="vue-slider vue-slider--heroes">
+            <carousel-3d :space="512+128" :width="562" :height="544" :loop="true" :controls-visible="true"
+                :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'" :controls-width="30"
+                :controls-height="60" :clickable="false">
+                <slide v-for="(slide, i) in slides" :index="i">
+                    <div class="vue-slider__card-container">
+                        <div class="vue-slider__img-container">
+                            <img :src="slide.imgCharacter" alt="">
+                            <img :src="slide.imgCharacterVariant" alt="">
+                        </div>
+                        <p>{{slide.cardName}}</p>
+                        <p>{{slide.cardDescription}}</p>
+                    </div>
+                </slide>
+            </carousel-3d>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
